@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[jayrbolton.com]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://jayrbolton.com/"/>
+  <updated>2015-12-26T06:35:22.330Z</updated>
+  <id>http://jayrbolton.com/</id>
+  
+  <author>
+    <name><![CDATA[Jay R Bolton]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[work]]></title>
+    <link href="http://jayrbolton.com/work/"/>
+    <id>http://jayrbolton.com/work/</id>
+    <published>2015-12-26T06:35:22.390Z</published>
+    <updated>2015-12-26T06:35:22.330Z</updated>
+    <content type="html"><![CDATA[<h1 id="CommitChange"><a href="#CommitChange" class="headerlink" title="CommitChange"></a>CommitChange</h1><p><a href="https://commitchange.com" target="_blank" rel="external">CommitChange</a> is a fundraising platform for nonprofits. In the summer of 2013, <a href="http://twitter.com/siliconroderick" target="_blank" rel="external">Roderick Campbell</a> and I packed everything we owned into a single car and drove to Silicon Valley to join the <a href="http://boost.vc/" target="_blank" rel="external">BoostVC</a> incubator and begin the long and strange journey of building a tech startup in the bay. We are now located in Oakland. I have been doing full stack development in Javascript and Ruby for CommitChange as my primary focus for the last few years.</p>
+<h4 id="vexpad"><a href="#vexpad" class="headerlink" title="vexpad"></a>vexpad</h4><p>Write music in your browser using code: <a href="http://www.jayrbolton.com/code-compose/" target="_blank" rel="external">http://www.jayrbolton.com/code-compose/</a></p>
+<h4 id="Cellular_Automata"><a href="#Cellular_Automata" class="headerlink" title="Cellular Automata"></a>Cellular Automata</h4><p>A small elementary cellular automata simulator in javascript using canvas and functional reactive programming: <a href="http://www.jayrbolton.com/elementary_cellular_automata/" target="_blank" rel="external">http://www.jayrbolton.com/elementary_cellular_automata/</a></p>
+<h4 id="Linear_Partitioning"><a href="#Linear_Partitioning" class="headerlink" title="Linear Partitioning"></a>Linear Partitioning</h4><p>An algorithm useful for image collages and other things: <a href="https://github.com/jayrbolton/linear-partitioning" target="_blank" rel="external">https://github.com/jayrbolton/linear-partitioning</a></p>
+<h4 id="Python_Type_Inference"><a href="#Python_Type_Inference" class="headerlink" title="Python Type Inference"></a>Python Type Inference</h4><p>Statically analyzes python code and can potentially infer the types of almost everything. My major project as an undergrad, this was something I have always wished that I time to return to: <a href="https://github.com/jayrbolton/python-type-inferencer" target="_blank" rel="external">https://github.com/jayrbolton/python-type-inferencer</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="CommitChange"><a href="#CommitChange" class="headerlink" title="CommitChange"></a>CommitChange</h1><p><a href="https://commitchange.]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[info]]></title>
+    <link href="http://jayrbolton.com/info/"/>
+    <id>http://jayrbolton.com/info/</id>
+    <published>2015-12-26T06:35:21.486Z</published>
+    <updated>2015-12-26T06:35:21.434Z</updated>
+    <content type="html"><![CDATA[<p>I work and live in Berkeley and Oakland, went to college in Olympia and Santa Fe, and grew up in Albuquerque.</p>
+<p>I like increasing the ratio of effectiveness to complexity, the relationship of syntax and semantics, considering the gap between subject and object, and snacks.</p>
+<p>I like to use Debian, Vim, xmonad, Tmux, and the colemak keyboard layout.</p>
+<p>I built this site using <a href="https://hexo.io" target="_blank" rel="external">Hexo</a> and based it originally on the <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank" rel="external">apollo</a> theme.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I work and live in Berkeley and Oakland, went to college in Olympia and Santa Fe, and grew up in Albuquerque.</p>
+<p>I like increasing th]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
