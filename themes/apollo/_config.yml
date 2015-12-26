@@ -1,0 +1,12 @@
+menu:
+  blog: /
+  work: /work/
+  info: /info/
+  rss: /atom.xml
+  github: https://github.com/jayrbolton
+
+favicon: /anti-logo.png
+logo: /anti-logo.svg
+
+# google-analytics:
+ga: UA-65933410-1
