@@ -70,4 +70,4 @@ theme: apollo
 deploy:
   type: git
   repo: https://github.com/jayrbolton/jayrbolton.github.io.git
-  branch: gh-pages
+  branch: master
