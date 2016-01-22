@@ -22,6 +22,13 @@ header .nav-list-item a
 
 header .logo-link img
   opacity: 0.7
+  -moz-transform: scaleX(1)
+  -o-transform: scaleX(1)
+  -webkit-transform: scaleX(1)
+  transform: scaleX(1)
+  filter: FlipH
+  -ms-filter: "FlipH"
+  transition: transform 1s
 
 header .logo-link img:hover
   opacity: 1
@@ -31,3 +38,4 @@ header .logo-link img:hover
   transform: scaleX(-1)
   filter: FlipH
   -ms-filter: "FlipH"
+
