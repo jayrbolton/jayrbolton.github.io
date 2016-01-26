@@ -18,6 +18,10 @@ Get a general idea about the feasibility of a startup that collects monthly recu
 
 A small elementary cellular automata simulator in javascript using canvas and functional reactive programming. Given the opportunity, I'd like to generalize this into a [self-referencing cellular automata](http://mitpress.mit.edu/sites/default/files/titles/content/alife14/978-0-262-32621-6-ch083.pdf).
 
+#### [ffffocus](http://www.jayrbolton.com/ffffocus)
+
+This is a micro-app that I use for my own work. It helps me focus like crazy. It's like the Pomodoro Technique, but instead is goal oriented. [Repo](github.com/jayrbolton/ffffocus).
+
 #### [vexpad](http://www.jayrbolton.com/code-compose/)
 
 Write sheet music in your browser using code. [Link.](http://www.jayrbolton.com/code-compose/)
