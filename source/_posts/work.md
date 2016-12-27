@@ -6,9 +6,13 @@ tags:
 
 # [CommitChange](https://commitchange.com)
 
-[CommitChange](https://commitchange.com) is a fundraising platform for nonprofits. It has been a whirlwhind of an experience learning web development, business planning, customer support, quality control, etc. In the summer of 2013, [Roderick Campbell](http://twitter.com/siliconroderick) and I packed everything we owned into a single car and drove to Silicon Valley to join the [BoostVC](http://boost.vc/) incubator and begin the long and strange journey of building a tech startup in the bay. We are now located in Oakland. I've served as the CTO, doing full stack development with Rails and modular javascript for CommitChange as my primary focus for the last few years.
+[CommitChange](https://commitchange.com) is a fundraising platform for nonprofits. It has been a whirlwhind of an experience, starting in the summer of 2013 with [Roderick Campbell](http://twitter.com/siliconroderick), when we packed everything we owned into a single car and drove to the Bay Area to join the [BoostVC](http://boost.vc/) incubator and begin the long and strange journey of building a tech startup in "silicon valley". We have since moved to Oakland. I've served as the CTO, doing full stack development in javascript as my primary focus for the last few years.
 
-## Side projects
+## Other projects
+
+#### [flimflam - a functional, modular, reactive, tested web components](http://flimflamjs.github.io)
+
+Flimflam is a core development interest for me, and I hope to soon have a very robust and complete collection of UI components in this system: [Link](http://flimflamjs.github.io)
 
 #### [dontdie - A SAAS startup runway calculator](http://www.jayrbolton.com/dontdie)
 
