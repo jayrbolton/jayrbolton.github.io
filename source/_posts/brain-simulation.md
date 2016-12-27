@@ -4,9 +4,9 @@ date: 2016-12-26 17:03:49
 tags:
 ---
 
-Simulating a human brain, or any biological brain, on a computer is impossible within current computer architectures. Outlined here are a few basic ontological and technical reasons that our current hardware paradigm does not map to the workings of a brain in some very fundamental ways. This also reveals that making any _true_ simulation of any piece of reality is impossible.
+Simulating a human brain on a computer (or any biological brain) is impossible within current computer architectures. There are a few basic ontological and technical reasons that our current hardware paradigm does not map to the workings of a brain, in some very fundamental ways. This also reveals that making any _true_ simulation of any piece of reality is impossible.
 
-By "current computer architectures", I mean the Von Neumann machine that sequentially performs operations on a memory register. Fundamentally, all our computers have the same architecture, and it is only a question of speed and scale. More obscure variations of working computer architectures still don't even come close to how the brain works at a basic level. And yes, I am accounting for massive improvements in speed, parallel computing, and memory, even to very large orders of magnitude.
+By "current computer architectures", I mean the [Von Neumann machine](https://en.wikipedia.org/wiki/Von_Neumann_architecture) that sequentially performs operations on a memory register. Fundamentally, all our computers have this same architecture, and it is only a question of speed and scale. More obscure variations of working computer architectures still don't even come close to how the brain works at a basic level. And yes, I am accounting for massive improvements in speed, parallel computing, and memory, even to very large orders of magnitude.
 
 ## Parallel time problem
 
