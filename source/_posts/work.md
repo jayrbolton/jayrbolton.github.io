@@ -4,17 +4,15 @@ date: 2016-01-21 17:03:49
 tags:
 ---
 
-# [CommitChange](https://commitchange.com)
+## [CommitChange](https://commitchange.com)
 
-[CommitChange](https://commitchange.com) is a fundraising platform for nonprofits. It has been a whirlwhind of an experience, starting in the summer of 2013 with [Roderick Campbell](http://twitter.com/siliconroderick), when we packed everything we owned into a single car and drove to the Bay Area to join the [BoostVC](http://boost.vc/) incubator and begin the long and strange journey of building a tech startup in "silicon valley". We have since moved to Oakland. I've served as the CTO, doing full stack development in javascript as my primary focus for the last few years.
-
-## Other projects
+[CommitChange](https://commitchange.com) is a fundraising platform for nonprofits. I helped start it in the summer of 2013, when we packed everything we owned into a single car and drove to the Bay Area to join a startup incubator, beginning the long and strange journey of building a tech startup in "silicon valley". I cut my teeth on programming and Javascript while working on CommitChange.
 
 #### [flimflam - a functional, modular, reactive, tested web components](http://flimflamjs.github.io)
 
 Flimflam is a core development interest for me, and I hope to soon have a very robust and complete collection of UI components in this system: [Link](http://flimflamjs.github.io)
 
-#### [dontdie - A SAAS startup runway calculator](http://www.jayrbolton.com/dontdie)
+#### [dontdie - runway calculator](http://www.jayrbolton.com/dontdie)
 
 Get a general idea about the feasibility of a startup that collects monthly recurring revenue by entering some of your basic metrics and getting a three-year projection. Made using the Functional Frontend Architecture I use, described below. [Link](http://www.jayrbolton.com/dontdie.)
 
@@ -38,5 +36,5 @@ An algorithm useful for image collage libraries and other things. [Link.](https:
 
 #### [Python Type Inference](https://github.com/jayrbolton/python-type-inferencer)
 
-Statically analyzes python code and can potentially infer the types of almost everything. My major project as an undergrad, this was something I have always wanted to return to.
+Undergraduate project for statically analyzing python code to infer the types of regular python programs to find bugs and generate documentation.
 
