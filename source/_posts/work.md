@@ -1,6 +1,6 @@
-title: work
-summary: reference collection of my works and projects
-date: 2016-01-21 17:03:49
+title: Portfolio
+summary: Project references
+date: 2016-12-24 17:03:49
 tags:
 ---
 

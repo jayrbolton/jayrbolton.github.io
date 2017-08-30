@@ -1,7 +1,7 @@
-title: "On general AI: we're not really close"
-summary: Some reasons why general AI is still out of reach
+title: "On general AI: we're not close"
+summary: Some reasons why general AI is still out of reach.
 date: 2016-12-26 17:03:49
-tags:
+tags: ai
 ---
 
 Recently, discussion has been building that general AI is on the horizon. We've also seen a lot of hype about how dangerous to humanity such an AI could be. Many TED talks, online magazines, podcasters, etc. have focused on this topic, become bullish on its potential, and embraced the alarmism.

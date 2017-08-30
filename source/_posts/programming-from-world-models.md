@@ -1,7 +1,7 @@
 title: Programming with world modeling 
 summary: Thinking of programming as a creative process of declarative world-building.
 date: 2017-08-26 17:31:30
-tags:
+tags: pld
 ---
 
 In the creative process of writing code, most programmers start solving a problem by thinking of the steps they need to take to get some output, thinking algorithmically right off the bat. An alternative approach is to think about modeling a small universe, full of things with properties, relationships, and laws. This is like starting a novel by profiling a set of characters, their relationships, and their environments, before you start writing any particular character's story. 
