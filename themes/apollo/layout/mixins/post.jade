@@ -1,7 +1,7 @@
 
 mixin posts()
   ul.home.post-list
-    - site.posts.each(function(item, index) {
+    - site.posts.sort('date', -1).each(function(item, index) {
       li.post-list-item
         article.post-block
           h2.post-title
@@ -9,7 +9,6 @@ mixin posts()
               != item.title
           .post-content
             != item.summary
-          a.read-more(href=item.path) ... more
     - })
 
 mixin post(item)
