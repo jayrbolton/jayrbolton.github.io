@@ -15,7 +15,7 @@ tags:
 ## Open-source modules
 
 * [dat-wot](https://github.com/jayrbolton/dat-wot) -- a decentralized user identity and cryptography system (WIP)
-* [uzu](github.com/uzujs/uzu) -- a minimalistic frontend framework with modular, statechart-driven components
+* [uzu](https://github.com/uzujs/uzu) -- a minimalistic frontend framework with modular, statechart-driven components
 * [snabbdom-statechart-components](https://github.com/jayrbolton/snabbdom-statechart-components) -- Fractal UI components with statecharts
 * [harel](https://github.com/jayrbolton/harel) -- Harel Statecharts in javascript
 * [flimflam](https://github.com/flimflamjs/flimflam) -- Reactive UI components with flyd and snabbdom
