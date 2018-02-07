@@ -4,44 +4,39 @@ date: 2016-12-24 17:03:49
 tags:
 ---
 
-## [Rally Starter](https://rallystarter.com)
+## Rally Starter
 
-A platform for organizing activism around different causes. I'm doing full-stack development for this project in a small team.
+[Rally Starter](https://rallystarter.com) is a platform for political advocacy. I've been doing full-stack development for this project since January 2017.
 
-## Meshy - secure and decentralized collaboration
+## CommitChange
 
-A peer-to-peer public key network built with [Dat](http://datproject.org/). We're currently doing grant fundraising for this project.
+[CommitChange](https://commitchange.com) is a fundraising platform for nonprofits that I co-founded as its CTO in 2013. I worked full-time on CommitChange for five years as a full-stack engineer before moving on to other projects in June of 2017.
 
-* [https://github.com/jayrbolton/dat-pki](https://github.com/jayrbolton/dat-pki)
+## Open-source modules
 
-## [CommitChange](https://commitchange.com)
-
-[CommitChange](https://commitchange.com) is a fundraising platform for nonprofits. I helped start it as its CTO in the summer of 2013, when we packed everything we owned into a single car and drove to the Bay Area to join a startup incubator, beginning the long and strange journey of building a tech startup in "silicon valley". We raised funds from people like Mark Cuban, Tim Draper, and 500 Startups. I cut my teeth on programming and Javascript while working on CommitChange, directly after finishing undergrad CS.
-
-## [flimflam - functional reactive web modules](http://flimflamjs.github.io)
-
-
-## Small apps
-
-* [dontdie - runway calculator](http://www.jayrbolton.com/dontdie)
-* [Elementary Cellular Automata](http://www.jayrbolton.com/elementary_cellular_automata/)
-* [ffffocus](http://www.jayrbolton.com/ffffocus)
-* [vexpad - music coding](http://www.jayrbolton.com/code-compose/)
-
-## Javascript modules
-
-* [linear-partitioning](https://github.com/jayrbolton/linear-partitioning)
-* [browserify-crawl](https://github.com/jayrbolton/browserify-crawl)
-* [anchor-hash-scroll](https://github.com/jayrbolton/anchor-hash-scroll)
+* [dat-wot](https://github.com/jayrbolton/dat-wot) -- a decentralized user identity and cryptography system (WIP)
+* [uzu](github.com/uzujs/uzu) -- a minimalistic frontend framework with modular, statechart-driven components
+* [snabbdom-statechart-components](https://github.com/jayrbolton/snabbdom-statechart-components) -- Fractal UI components with statecharts
+* [harel](https://github.com/jayrbolton/harel) -- Harel Statecharts in javascript
+* [flimflam](https://github.com/flimflamjs/flimflam) -- Reactive UI components with flyd and snabbdom
+* [ordered-hash](https://github.com/jayrbolton/ordered-hash) -- Ordered hash data structure for javascript
+* [linear-partitioning](https://github.com/jayrbolton/linear-partitioning) -- linear partitioning algorithm for javascript
+* [browserify-crawl](https://github.com/jayrbolton/browserify-crawl) -- javascript directory tree file crawler and watcher
+* [postcss-walk](https://github.com/jayrbolton/postcss-walk) -- a postcss directory tree file crawler and watcher
+* [anchor-hash-scroll](https://github.com/jayrbolton/anchor-hash-scroll) -- anchor scroll utility
 * [flyd-crud](https://github.com/jayrbolton/flyd-crud)
-* [postcss-walk](https://github.com/jayrbolton/postcss-walk)
 * [flyd-ajax](https://github.com/jayrbolton/flyd-ajax)
 * [flyd-windowresize](https://github.com/jayrbolton/flyd-windowresize)
 * [flyd-zip](https://github.com/jayrbolton/flyd-zip)
 * [flyd-url](https://github.com/jayrbolton/flyd-url)
 
-# Old projects
+## Small apps
 
-#### [Python Type Inference](https://github.com/jayrbolton/python-type-inferencer)
+* [dontdie - runway calculator](http://www.jayrbolton.com/dontdie)
+* [Elementary Cellular Automata](http://www.jayrbolton.com/elementary_cellular_automata/)
+* [ffffocus](http://www.jayrbolton.com/ffffocus) -- small productivity app
+* [vexpad](http://www.jayrbolton.com/code-compose/) -- compose sheet music with code
 
-Undergraduate project for statically analyzing python code to infer the types of regular python programs to find bugs and to generate documentation.
+## Older projects
+
+* [Python Type Inference](https://github.com/jayrbolton/python-type-inferencer) -- Undergraduate project for statically analyzing python code to infer types

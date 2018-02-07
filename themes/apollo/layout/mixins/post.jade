@@ -1,7 +1,7 @@
 
 mixin posts()
   ul.home.post-list
-    - page.posts.each(function(item, index) {
+    - site.posts.each(function(item, index) {
       li.post-list-item
         article.post-block
           h2.post-title
@@ -15,7 +15,8 @@ mixin posts()
 mixin post(item)
   .post
     article.post-block
-      h1.post-title
-        != item.title
+      if item.title
+        h1.post-title
+          != item.title
       .post-content
         != item.content
