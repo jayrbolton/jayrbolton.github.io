@@ -5,10 +5,11 @@ html(lang=config.language)
   body
     header
       a.logo-link(href=url_for())
-        img(src=theme.logo)
+        span
       include nav
     section.container
       block container
     footer
       block pagination
     include scripts
+    script(type="text/javascript", src="/index.js")
