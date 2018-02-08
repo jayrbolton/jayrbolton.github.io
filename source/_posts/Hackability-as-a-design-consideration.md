@@ -56,8 +56,7 @@ While this category of hackability seems closely related to the previous categor
 * Bash and pipes, node streams
 * Uniform protocols and data structures (eg. JSON APIs)
 * Standards (eg. HTTP) and (eg. micro-USB versus Apple)
-* Openness and accessibility
-  * Wikipedia, OpenStreetMap, and the web in general
+* Openness and accessibility -- Wikipedia, OpenStreetMap, and the web in general
 
 One key feature in the above examples is composability, which is closely tied to modularity. Programming language features, like robust package managers, package type signatures, higher-order functions, lazy evaluation (see [this paper](https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf)) all promote modularity and composability. Unix tools, especially the ability to pipe programs together, is a great example.
 
@@ -70,9 +69,9 @@ Composability is a particularly nice design consideration because, unlike many o
 Standards can both increase and decrease hackability. They increase it when they allow things to be more inter-operable, such as micro-USB versus the various proprietary Apple connectors. Other standards may actually impose so many constraints on your work that you're unable to create the things you want to create because you have no flexibility. The design challenge is to strike a magic balance, where the specification in the standard is generalized enough that people can create unimaginable things with it, and don't find particular reasons to complain and constantly change it. HTTP is a good example of this -- the format has hardly changed in decades, and yet people manage to make drastically different systems and ideas with it.
 
 If you want to make something more hackable, you might think of three main considerations:
-1. How composable are the pieces in the system? Can you take pieces and recombine them in new ways to get new effects?
-1. How accessible is the system? Are there good educational resources that allow users to understand the system in order to extend it?
-1. How open is everything? Can users read, use, and modify work made by other users? Can users read and modify the system itself?
+* How composable are the pieces in the system? Can you take pieces and recombine them in new ways to get new effects?
+* How accessible is the system? Are there good educational resources that allow users to understand the system in order to extend it?
+* How open is everything? Can users read, use, and modify work made by other users? Can users read and modify the system itself?
 
 A final but important point is to promote play and experimentation. Tools like sandboxes, consoles, interactive tutorials, code sharing websites can all help tremendously. If hackability is about finding creative and unexpected uses for an existing system, then the ability to play with the tools may be your most important feature.
 

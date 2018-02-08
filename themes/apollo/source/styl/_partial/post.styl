@@ -7,7 +7,7 @@
   font-size: 1.5em
   position: relative
   &:before
-    content: '~'
+    content: ''
     color: #42b983
     position: absolute
     left: -0.7em
@@ -24,7 +24,7 @@
     position: relative
     margin: 1em 0
     &:before
-      content: "#"
+      content: ""
       color: #42b983
       position: absolute
       left: -0.7em
@@ -44,12 +44,10 @@
   list-style: none
   padding-left: 0
 
-.post-content li
-  margin-left: -1rem
-
-.post-content li::before
+.post-content ul li::before
   content: "•"
-  margin-right: 0.75rem
+  margin-right: 0.7rem
+  margin-left: -1rem
   color: #42b983
 
 .post-content a

@@ -1,7 +1,6 @@
 ### Currently
 
 - Working on [Rally Starter](https://rallystarter.com)
-- Doing spec work for [RE-volv](http://re-volv.org/)
 - Working on the [Uzu](https://github.com/uzujs/uzu) series of frontend libraries
 - Learning stuff
 
