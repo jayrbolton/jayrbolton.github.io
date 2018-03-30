@@ -4,13 +4,17 @@ date: 2016-12-24 17:03:49
 tags:
 ---
 
+## KBase
+
+I joined Berkeley Lab's [KBase](https://kbase.us/) bioinformatics project as a full-stack developer in March, 2018.
+
 ## Rally Starter
 
-[Rally Starter](https://rallystarter.com) is a platform for political advocacy. I've been doing full-stack development for this project since January 2017.
+[Rally Starter](https://rallystarter.com) is a platform for political advocacy. I did full-stack development on this project with one other developer.
 
 ## CommitChange
 
-[CommitChange](https://commitchange.com) is a fundraising platform for nonprofits that I co-founded as its CTO in 2013. I worked full-time on CommitChange for five years as a full-stack engineer before moving on to other projects in June of 2017.
+[CommitChange](https://commitchange.com) is a fundraising platform for nonprofits that I co-founded as its CTO in 2013. I worked full-time on CommitChange for five years as a full-stack engineer.
 
 ## Open-source modules
 
