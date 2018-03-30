@@ -1,8 +1,7 @@
 ### Currently
 
-- Working on [Rally Starter](https://rallystarter.com)
-- Working on the [Uzu](https://github.com/uzujs/uzu) series of frontend libraries
-- Learning stuff
+- Working on [Kbase](https://kbase.us/) at Lawrence Berkeley National Lab
+- Learning bioinformatics
 
 ### Recently
 
