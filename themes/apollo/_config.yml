@@ -4,6 +4,7 @@ menu:
   about: /about/
   rss: /atom.xml
   github: https://github.com/jayrbolton
+  wiki: http://jayrbolton.com/wiki
 
 favicon: /logo.png
 logo: /anti-logo.png
