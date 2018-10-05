@@ -5,6 +5,7 @@
 
 ### Recently
 
+- Published [Algorithms for parsing and factoring boolean expressions](/An-algorithm-for-factoring-boolean-expressions)
 - Published [A meandering overview of the actor model](/Overview-of-actor-model)
 - Updated [On the impossibility of general AI](/brain-simulation)
 - Published [Hackability as a design consideration](/Hackability-as-a-design-consideration)
