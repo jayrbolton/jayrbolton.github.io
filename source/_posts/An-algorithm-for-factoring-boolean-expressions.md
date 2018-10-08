@@ -6,13 +6,13 @@ tags: code, algorithms
 
 An interesting problem is to take a nested boolean logical expression, such as:
 
-```
+{% raw %}
 (A or B) and (C or A and D) or E or F
-```
+{% endraw %}
 
 And write an algorithm to factor out all the terms into a flat expression (no parentheses) in an efficient way. For the above expression, we would get 6 total conjunctions joined together with disjunctions (`or` operators):
 
-```
+{% codeblock %}
 A and C
  or
 A and D
@@ -24,13 +24,13 @@ B and A and D
 E
  or
 F
-```
+{% endcodeblock %}
 
 In Python, we might want our final value to be a list of lists, where each sublist is a conjunction:
 
-```
+{% codeblock %}
 [['A', 'C'], ['A', 'D'], ['B', 'C'], ['B', 'A', 'D'], ['E'], ['F']]
-```
+{% endcodeblock %}
 
 It's important to notice is that we can have long chains of terms, such as `A and B or C and D or E and F and G ...` as well as deep nesting, such as `A or (B and (C or (D and (E or ...`.
 
@@ -40,7 +40,7 @@ Before conquering the factoring challenge, let's parse these expressions. One po
 
 First we declare some basic elements
 
-```
+{% codeblock lang:python %}
 import parsec as p
 
 # Stuff to discard
@@ -56,13 +56,13 @@ lparen = lexeme(p.string('('))
 rparen = lexeme(p.string(')'))
 symbol = lexeme(p.regex(r'[\d\w_-]+'))
 op = lexeme(p.regex(r'(and|or)'))
-```
+{% endcodeblock %}
 
 This defines all the basic keywords of the language, such as `and`, `or`, parentheses, and whitespace.
 
 In order to parse whole nested expressions, we use a generator function with some recursiveness:
 
-```
+{% codeblock lang:python %}
 @p.generate('compound expression')
 def compound_expr():
     """An expression with multiple terms, and optionally with surrounding parens."""
@@ -75,7 +75,7 @@ def compound_expr():
 atom = op | symbol
 expr = atom | compound_expr
 program = p.many(expr).skip(ignore)
-```
+{% endcodeblock %}
 
 For example, to parse `a or (b and c)`, the following parsers would get called in order:
 - `program` on `a or (b and c)`
@@ -91,15 +91,15 @@ For example, to parse `a or (b and c)`, the following parsers would get called i
 
 Calling `program` as follows:
 
-```
+{% codeblock lang:python %}
 parsed = program("a or (b and c or d)", 0)
-```
+{% endcodeblock %}
 
 Gives back a result that looks like:
 
-```
+{% codeblock lang:python %}
 ['a', 'or', ['b', 'and', 'c', 'or', 'd']]
-```
+{% endcodeblock %}
 
 We can use this simple form to do our factoring work:
 
@@ -146,23 +146,23 @@ A couple rules immediately pop to mind. First, the `or` operator seems to append
 
 For the `or` combination case, we can write some Python to append the term as a new sub-list:
 
-```
+{% codeblock lang:python %}
 def or_combination(disjunction, new_term):
     disjunction.append([term])
     return disjunction
-```
+{% endcodeblock %}
 
 While the `and` case appends the term to the last sub-list:
 
-```
+{% codeblock lang:python %}
 def and_combination(disjunction, term):
     disjunction[-1].append(term)
     return disjunction
-```
+{% endcodeblock %}
 
 We combine the above to functions into a single function that iterates over all terms in a flat expression and converts them into a list of conjunctions
 
-```
+{% codeblock lang:python %}
 def expr_to_disjunction(expr):
     mode = 'or'  # start by appending the first term to a new sublist
     result = []
@@ -175,7 +175,7 @@ def expr_to_disjunction(expr):
             # `term` must be an operator. Set the mode to 'and' or 'or'
             mode = term
     return result
-```
+{% endcodeblock %}
 
 ### Combining disjunctions
 
@@ -184,7 +184,7 @@ A "disjunction" is a list of conjunctions. For example, the disjunction `[[a], [
 In order to collapse expressions with parentheses, we need to think about how to combine whole disjunctions. For example, say you had:
 
 ```
-`(a or b) and (c or d)`.
+(a or b) and (c or d)
 ```
 
 Using the code above, we can tackle the two sub-expressions:
@@ -202,13 +202,13 @@ Now we can consider how to combine `[[a], [b]]` and `[[c], [d]]` using the `and`
 
 We're doing a pairwise combination of each term from each disjunction, which sounds like a nested for loop:
 
-```
+{% codeblock lang:python %}
 [c1 + c2 for c1 in disj1 for c2 in disj2]
-```
+{% endcodeblock %}
 
 Where `disj1` in our case is `[[a], [b]]` and `disj2` is `[[c], [d]]`. Incorporating the above code into our `and_combination` function, we get:
 
-```
+{% codeblock lang:python %}
 def and_combination(disjunction, term):
     if isinstance(term, list):
         # `term` is a disjunction
@@ -218,7 +218,7 @@ def and_combination(disjunction, term):
         # `term` is an atomic lexeme; append it to the last conjunction in the disjunction
         disjunction[-1].append(term)
         return disjunction
-```
+{% endcodeblock %}
 
 What about the `or` case? Say we had:
 
@@ -248,7 +248,7 @@ disjunction + disjunction2
 Incorporating that into our `or_combination` function, we get:
 
 
-```
+{% codeblock lang:python %}
 def or_combination(disjunction, term):
     if isinstance(term, list):
         # `term` is a disjunction
@@ -259,7 +259,7 @@ def or_combination(disjunction, term):
         # Append the term as a new sublist
         disjunction.append([term])
     return disjunction
-```
+{% endcodeblock %}
 
 Now our `or_combination` and `and_combination` functions can combine atomic lexemes (such as `a` and `b`) as well as fill sub-expressions.
 
@@ -271,53 +271,55 @@ We want to process things bottom up, converting the most nested sub-expressions 
 
 In order to apply a function to every level of the expression tree bottom-up, we can traverse the tree using recursion.
 
-```py
+{% codeblock lang:python %}
 def traverse_expr(expr, fn):
     if isinstance(expr, str):
         return expr  # base case
     return fn([traverse_lexemes(term, fn) for term in expr])
-```
+{% endcodeblock %}
 
 This function applies a given function `fn` to every level of the tree, starting from the bottom and working up. For atomic lexemes, we don't apply the function and simply return the lexeme. This is our base case. 
 
 For example, given the expression `[['a', 'and', 'b'], 'or', ['c', 'and', 'd']]`, `fn` is applied to every list of terms like so:
 
-```
+{% codeblock lang:python %}
 fn([fn(['a', 'and', 'b']), 'or', fn(['c', 'and', 'd'])])
-```
+{% endcodeblock %}
 
 We can pass our `expr_to_disjunction` function as `fn`:
 
-```
+{% codeblock lang:python %}
 disjunction = traverse_expr(expr, expr_to_disjunction)
-```
+{% endcodeblock %}
 
 This gives us our final, correct result. To understand why, let's take a full example, starting with a string expression:
 
-```
+{% codeblock lang:python %}
 string = "(a or b) and (c or d and e)"
-```
+{% endcodeblock %}
 
 We first parse this into lists of lexemes:
 
-```
+{% codeblock lang:python %}
 expr = program(0, string)
 # -> [['a', 'or', 'b'], 'and', ['c', 'or', 'd', 'and', 'e']]
-```
+{% endcodeblock %}
 
 Then we traverse the tree bottom-up and apply `expr_to_disjunction` at every level:
 
-```
+{% codeblock lang:python %}
 result = traverse_expr(expr, expr_to_disjunction)
-# result is [['a', 'c'], ['a', 'd', 'e'], ['b', 'c'], ['b', 'd', 'e']]
+{% endcodeblock %}
 
-# Every step of the way, starting with [['a', 'or', 'b'], 'and', ['c', 'or', 'd', 'and', 'e']]
-# Apply expr_to_disjunction to each sub-expression
-# -> [expr_to_disjunction(['a', 'or', 'b']), 'and', ['c', 'or', 'd', 'and', 'e']]
-# -> [[['a'], ['b']], 'and', ['c', 'or', 'd', 'and', 'e']]
-# -> [[['a'], ['b']], 'and', expr_to_disjunction(['c', 'or', 'd', 'and', 'e'])]
-# -> [[['a'], ['b']], 'and', [['c'], ['d', 'e']]]
-# Apply expr_to_disjunction to the whole expression
-# -> expr_to_disjunction([[['a'], ['b']], 'and', [['c'], ['d', 'e']]])
-# -> [['a', 'c'], ['a', 'd', 'e'], ['b', 'c'], ['b', 'd', 'e']]
-```
+`result` will be `[['a', 'c'], ['a', 'd', 'e'], ['b', 'c'], ['b', 'd', 'e']]`
+
+Every step of the way, starting with `[['a', 'or', 'b'], 'and', ['c', 'or', 'd', 'and', 'e']]`
+
+* Apply `expr_to_disjunction` to each sub-expression
+* -> `[expr_to_disjunction(['a', 'or', 'b']), 'and', ['c', 'or', 'd', 'and', 'e']]`
+* -> `[[['a'], ['b']], 'and', ['c', 'or', 'd', 'and', 'e']]`
+* -> `[[['a'], ['b']], 'and', expr_to_disjunction(['c', 'or', 'd', 'and', 'e'])]`
+* -> `[[['a'], ['b']], 'and', [['c'], ['d', 'e']]]`
+* Apply `expr_to_disjunction` to the whole expression
+* -> `expr_to_disjunction([[['a'], ['b']], 'and', [['c'], ['d', 'e']]])`
+* -> `[['a', 'c'], ['a', 'd', 'e'], ['b', 'c'], ['b', 'd', 'e']]`
