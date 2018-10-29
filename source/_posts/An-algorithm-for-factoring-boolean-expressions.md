@@ -36,7 +36,7 @@ It's important to notice is that we can have long chains of terms, such as `A an
 
 ## Parsing
 
-Before conquering the factoring challenge, let's parse these expressions. One powerful option is to use a library called `parsec`, which originally comes from the Haskell community.
+Before tacking on the challenge of factoring these expressions, let's start by parsing them from plain strings into python lists. One powerful option is to use a library called `parsec`, which originally comes from the Haskell community.
 
 First we declare some basic elements
 
@@ -60,7 +60,7 @@ op = lexeme(p.regex(r'(and|or)'))
 
 This defines all the basic keywords of the language, such as `and`, `or`, parentheses, and whitespace.
 
-In order to parse whole nested expressions, we use a generator function with some recursiveness:
+To parse whole nested expressions, we use a generator function with some recursiveness:
 
 {% codeblock lang:python %}
 @p.generate('compound expression')
@@ -105,13 +105,13 @@ We can use this simple form to do our factoring work:
 
 ## Factoring
 
-First let's consider our desired output. For an expression such as:
+Given an unfactored boolean expression, let's consider our desired output. For an expression such as:
 
 ```
 (A or B) and (C or A and D) or E or F
 ```
 
-We want a list of list of terms, like:
+We ultimately want a list of list of factored terms:
 
 ```
 [['A', 'C'], ['A', 'D'], ['B', 'C'], ['B', 'A', 'D'], ['E'], ['F']]
@@ -119,18 +119,18 @@ We want a list of list of terms, like:
 
 Where each sublist represents a conjunction (AND operator) of terms. The whole list is a disjunction (OR operator) of conjunctions (as an expression, the list-of-lists looks like `A and C or A and D or B and C or B and A and D or E or F`).
 
-This problem is a great example of a "divide and conquer algorithm", where you can break the problem up into simpler parts. We can solve this first by:
+This problem is a great example of a "divide and conquer algorithm", where you can break the problem up into smaller and simpler parts. We can solve this first by:
 
-- Combining a flat set of plain, atomic terms, like `a and b or c` into `[[a, b], [c]]`
-- Combining pre-converted disjunctions like `[[a], [b]]` and `[[c, d]]` into a single list using either an `and` or an `or` operator.
-    - Combining `[[a], [b]]` and `[[c, d]]` using `and` gives us `[[a, c, d], [b, c, d]]`
-        - Think of it as factoring `(a or b) and (c and d)`, giving `(a and c and d) or (b and c and d)`
-    - Combining `[[a], [b]]`, and `[[c, d]]` using `or` gives us `[[a], [b], [c, d]]`
-        - Think of it as factoring `(a or b) or (c and d)`, giving `a or b or (c and d)`
+- Combining a flat set of plain, atomic terms, like "`a and b or c`" into `[[a, b], [c]]`
+- Combining pre-converted disjunctions like `[[a], [b]]` and `[[c, d]]` into a single list using either an "`and`" or an "`or`" operator.
+    - Combining `[[a], [b]]` and `[[c, d]]` using "`and`" gives us `[[a, c, d], [b, c, d]]`
+        - Think of it as factoring "`(a or b) and (c and d)`", giving "`(a and c and d) or (b and c and d)`"
+    - Combining `[[a], [b]]`, and `[[c, d]]` using "`or`" gives us `[[a], [b], [c, d]]`
+        - Think of it as factoring "`(a or b) or (c and d)`", giving "`a or b or (c and d)`"
 
 ### Starting with an easier problem
 
-Let's think about turning flat, simple expressions into lists of conjunctions. For example:
+We want to turn flat, simple expressions into lists of conjunctions. For example:
 
 ```
 a or b -> [['a'], ['b']]
@@ -138,10 +138,10 @@ a and b -> [['a', 'b']]
 a and b or c and d -> [['a', 'b'], ['c', 'd']]
 ```
 
-A couple rules immediately pop to mind. First, the `or` operator seems to append new terms as a new list to the end, creating separate sub-lists. Combining terms with an `and` operator places the terms in the previous sub-list.
+A few rules immediately come to mind. First, the "`or`" operator seems to append new terms as a new list to the end, creating separate sub-lists. Combining terms with an `and` operator places the terms in the previous sub-list.
 
-- When adding a new term with an `or` operation, add a new sub-list with the new term as its only element
-- When adding a new term with an `and` operation, append the new term to the last sub-list
+- When adding a new term with an "`or`" operation, add a new sub-list with the new term as its only element
+- When adding a new term with an "`and`" operation, append the new term to the last sub-list
 - When adding the first term, add a new sub-list with the term as the only element
 
 For the `or` combination case, we can write some Python to append the term as a new sub-list:
@@ -194,13 +194,13 @@ Using the code above, we can tackle the two sub-expressions:
 (c or d) -> [[c], [d]]
 ```
 
-Now we can consider how to combine `[[a], [b]]` and `[[c], [d]]` using the `and` operator. By using what we know intuitively about factoring expressions (think of `or` as addition and `and` as multiplication), our expected result looks like:
+Now we can consider how to combine `[[a], [b]]` and `[[c], [d]]` using the "`and`" operator. By using what we know intuitively about factoring expressions (think of `or` as addition and `and` as multiplication), our expected result looks like:
 
 ```
 [[a, c], [a, d], [b, c], [b, d]]
 ```
 
-We're doing a pairwise combination of each term from each disjunction, which sounds like a nested for loop:
+We're doing a pairwise combination of each term from each disjunction, which can be generated with some nested looping:
 
 {% codeblock lang:python %}
 [c1 + c2 for c1 in disj1 for c2 in disj2]
