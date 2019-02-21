@@ -2,8 +2,8 @@
 var canvas = document.createElement('canvas')
 canvas.width = 200
 canvas.height = 200
-var ctx = canvas.getContext('2d')
 
+/*
 function drawTriangle (ctx) {
   ctx.beginPath()
   ctx.moveTo(0, -30)
@@ -11,13 +11,15 @@ function drawTriangle (ctx) {
   ctx.lineTo(-60, 30)
   ctx.lineTo(0, -30)
 }
+*/
 
+/*
 function draw (ts) {
   var rotation = ts / 10000
   ctx.globalCompositeOperation = 'destination-over'
   ctx.clearRect(0, 0, 200, 200)
   ctx.lineWidth = 2
-  
+
   // Triangle 2
   ctx.strokeStyle = 'rgba(66, 185, 131, 1)'
   ctx.save()
@@ -53,6 +55,7 @@ function draw (ts) {
 
   window.requestAnimationFrame(draw)
 }
+*/
 
 function triangle (svg, rot, dur, opacity) {
   var path = document.createElementNS(svgNS, 'path')
@@ -72,27 +75,33 @@ function triangle (svg, rot, dur, opacity) {
   ]
   path.setAttribute('transform', 'rotate(' + rot + ' ' + center[0] + ' ' + center[1] + ')')
   var anim = document.createElementNS(svgNS, 'animateTransform')
-  anim.setAttributeNS(null, "attributeName", "transform")
-  anim.setAttributeNS(null, "attributeType", "XML")
-  anim.setAttributeNS(null, "type", "rotate")
-  anim.setAttributeNS(null, "dur", dur)
-  anim.setAttributeNS(null, "repeatCount", "indefinite")
-  anim.setAttributeNS(null, "from", '0 ' + center[0] + ' ' + center[1])
-  anim.setAttributeNS(null, "to", '360 ' + center[0] + ' ' + center[1])
+  anim.setAttributeNS(null, 'attributeName', 'transform')
+  anim.setAttributeNS(null, 'attributeType', 'XML')
+  anim.setAttributeNS(null, 'type', 'rotate')
+  anim.setAttributeNS(null, 'dur', dur)
+  anim.setAttributeNS(null, 'repeatCount', 'indefinite')
+  anim.setAttributeNS(null, 'from', '0 ' + center[0] + ' ' + center[1])
+  anim.setAttributeNS(null, 'to', '360 ' + center[0] + ' ' + center[1])
   // path.appendChild(anim)
   svg.appendChild(path)
 }
 
-var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
 svg.style.width = '120px'
 svg.style.height = '120px'
 var svgNS = svg.namespaceURI
-var rotInterval = Math.random() * 40
+var rotInterval = 0.2 * 40
 triangle(svg, 0, '32', '1')
-triangle(svg, rotInterval, '34', '0.8')
-triangle(svg, 2 * rotInterval, '36', '0.6')
-triangle(svg, 3 * rotInterval, '38', '0.4')
-triangle(svg, 4 * rotInterval, '38', '0.2')
+triangle(svg, rotInterval, '34', '0.9')
+triangle(svg, 1 * rotInterval, '36', '0.8')
+triangle(svg, 2 * rotInterval, '38', '0.7')
+triangle(svg, 3 * rotInterval, '38', '0.6')
+triangle(svg, 4 * rotInterval, '38', '0.5')
+triangle(svg, 5 * rotInterval, '38', '0.4')
+triangle(svg, 6 * rotInterval, '38', '0.3')
+triangle(svg, 7 * rotInterval, '38', '0.2')
+triangle(svg, 8 * rotInterval, '38', '0.1')
+triangle(svg, 9 * rotInterval, '38', '0.05')
 
 var logoLink = document.querySelector('.logo-link')
 logoLink.replaceChild(svg, logoLink.firstChild)
