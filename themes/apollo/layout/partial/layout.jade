@@ -3,13 +3,19 @@ html(lang=config.language)
   head
     include head
   body
-    header
-      a.logo-link(href=url_for())
-        span
+    .wrapper
+      header
+        a.logo(href="/")
+          img.logo-img(src="/logo.png", width="100px")
+          .logo-txt
+            | Jay R Bolton
+          .logo-txt
+            | Berkeley, CA
       include nav
-    section.container
-      block container
-    footer
-      block pagination
-    include scripts
-    script(type="text/javascript", src="/index.js")
+      section.container
+        block container
+      footer
+        block pagination
+      include scripts
+      script(type="text/javascript", src="/index.js")
+      script(src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js")

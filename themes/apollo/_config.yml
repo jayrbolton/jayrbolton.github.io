@@ -1,11 +1,4 @@
 menu:
-  articles: /blog/
-  work: /work/
-  about: /about/
-  rss: /atom.xml
-  github: https://github.com/jayrbolton
-  wiki: http://www.jayrbolton.com/wiki
-
 favicon: /logo.png
 logo: /anti-logo.png
 

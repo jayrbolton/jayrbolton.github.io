@@ -74,5 +74,3 @@ If you want to make something more hackable, you might think of three main consi
 * How open is everything? Can users read, use, and modify work made by other users? Can users read and modify the system itself?
 
 A final but important point is to promote play and experimentation. Tools like sandboxes, consoles, interactive tutorials, code sharing websites can all help tremendously. If hackability is about finding creative and unexpected uses for an existing system, then the ability to play with the tools may be your most important feature.
-
-Feedback: jayrbolton at protonmail dot com

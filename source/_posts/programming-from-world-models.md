@@ -106,7 +106,3 @@ If we wanted to start introducing time delays in our simulation, such as a half-
 * [Denotational semantics](https://en.wikipedia.org/wiki/Denotational_semantics)
 * Off the deep end: [situational calculus](https://en.wikipedia.org/wiki/Situation_calculus)
 * [Functional reactive programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
-
-# Feedback
-
-Thoughts about this? Contact me at jayrbolton at gmail dot com.
