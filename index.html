@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="X-UA-Compatible" content="IE=edge">
+    <title>Jay R Bolton</title>
+    <meta name="description" content="Jay R Bolton, software engineer in Oakland, CA">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="short icon" href="favicon.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type='text/css'>
+  </head>
+
+  <body>
+    <div class='wrapper'>
+      <header>
+        <a class='logo' href="/">
+          <img src="logo.png" width="100px">
+          <div class='logo-txt'> Jay R Bolton </div>
+        </a>
+      </header>
+      <section class="container">
+        <div class='home-list'>
+
+          <div class='home-list-item'>
+            <p>Hello! I am a software engineer with strong interests in bioinformatics, creative coding, and sharing knowledge. I currently work at Lawrence Berkeley National Lab on the KBase project.</p>
+          </div>
+
+          <div class='home-list-item'>
+            <div class='home-list-item-text'>
+              <a href='mailto:jayrbolton+home@gmail.com' target='_blank' title='Email me'>
+                Email me
+              </a>
+            </div>
+          </div>
+
+          <div class='home-list-item'>
+            <div class='home-list-item-text'>
+              <a href='https://www.jayrbolton.com/jayrbolton-resume-cv/' target='_blank' title='Resume/CV'>
+                My résumé/CV
+              </a>
+            </div>
+          </div>
+
+          <div class='home-list-item'>
+            <div class='home-list-item-text'>
+              <a href='https://github.com/jayrbolton' target='_blank'>
+                My Github</a>, which lists most of my active and past projects
+            </div>
+          </div>
+
+          <div class='home-list-item'>
+            <div class='home-list-item-text'>
+              <a href='https://www.jayrbolton.com/wiki'>
+                My Wiki</a>, which may have limited interest to the general public
+            </div>
+          </div>
+
+          <div style='margin-top: 2.5rem'>
+            <canvas width=900 height=400>
+            </canvas>
+          </div>
+
+          <script type='text/javascript'>
+            (function() {
+              var start = window.performance.now();
+              var canv = document.querySelector('canvas');
+              var ctx = canv.getContext('2d');
+              ctx.globalCompositeOperation = 'source-over';
+              ctx.save();
+              function drawOne (ctx, posX, posY, scaleX, scaleY, alpha) {
+                // For reference: ctx.transform(horizScale, vertSkew, horizSkew, vertScale, horizTranslation, vertTranslation)
+                ctx.translate(posX, posY);
+                ctx.transform(scaleX, 0, 0, scaleY, 0, 0);
+                // Draw circle
+                var region = new window.Path2D();
+                region.arc(0, 0, 100, Math.PI * 2, false);
+                region.closePath();
+                // Draw fill
+                ctx.fillStyle = "rgba(100, 150, 250, " + alpha + ")";
+                ctx.fill(region)
+                ctx.resetTransform();
+              };
+              function draw (ts) {
+                ctx.fillStyle = "#f6f6f6";
+                ctx.fillRect(0, 0, 900, 400);
+                var ts = window.performance.now() - start;
+                for (var i = 0; i < 60; i++) {
+                  var speed = 0.00001;
+                  var rowCount = 12;
+                  var posX = 50 + Math.floor(i % rowCount) * 70;
+                  var posY = 50 + Math.floor(i / rowCount) * 70;
+                  var alpha = 1.1 - Math.abs(Math.sin(ts * speed * i));
+                  var scaleX = Math.abs(Math.sin(ts * speed * i)) * 0.3;
+                  var scaleY = Math.abs(Math.sin(ts * speed * i)) * 0.3;
+                  drawOne(ctx, posX, posY, scaleX, scaleY, alpha);
+                }
+                window.requestAnimationFrame(draw);
+              };
+              draw();
+            })();
+          </script>
+
+        </div>
+      </section>
+      <footer>
+      </footer>
+    </body>
+</html>
